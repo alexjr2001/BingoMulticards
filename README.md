@@ -3,6 +3,8 @@
 ## Project Overview
 
 Bingo Web is a Django-based web application that enables users to play a virtual bingo game. The application provides a user-friendly interface for drawing bingo numbers, tracking game progress, and managing bingo cards. It supports multiple languages and includes CSV-based card generation for flexibility.
+<img width="2525" height="1239" alt="image" src="https://github.com/user-attachments/assets/b3e39999-64ca-458c-993f-3bfb20dc66f7" />
+
 
 ## Key Features
 

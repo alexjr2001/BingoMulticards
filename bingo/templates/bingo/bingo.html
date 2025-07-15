@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+
+    <h1>Bingo</h1>
+    <input type="number" id="numero" placeholder="Ingrese número">
+    <button id="marcarBtn" onclick="marcarNumero()">Marcar</button>
+    <button onclick="quitarNumero()">Quitar Numero</button>
+
+    <div class="numerosSalidos">
+        <div id="numerosMarcados"></div>
+    </div>
+
+    <div id="cartillas">
+        {% for cartilla in cartillas %}
+            <table>
+                <tr>
+                    <th class="infoCartilla" colspan="5">Cartilla {{ cartilla.numero }} - {{ cartilla.nombre }}</th>
+                </tr>
+                <tr>
+                    <th>B</th><th>I</th><th>N</th><th>G</th><th>O</th>
+                </tr>
+                {% for fila in cartilla.cartilla %}
+                    <tr>
+                        {% for numero in fila %}
+                            <td class="casilla">{{ numero }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'js/play.js' %}"></script>
+
+
+</body>
+</html>

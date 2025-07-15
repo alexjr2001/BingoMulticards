@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Contenedor con GRID para 7 cartillas por fila */
+#cartillas {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Se ajusta dinámicamente */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+        
+table {
+    border-collapse: collapse;
+    width: 20rem;
+    height: 20rem;
+    table-layout: fixed; /* Asegura tamaño uniforme */
+}
+
+th, td {
+    border: 2px solid black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Color normal */
+.casilla {
+    background-color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Cuando está marcada */
+.marcada {
+    background-color: yellow !important;
+}
+
+@media (max-width: 768px) {
+    #cartillas {
+        grid-template-columns: repeat(3, 1fr); /* 3 cartillas por fila en móviles */
+    }
+}
+
+@media (max-width: 670px) {
+    #cartillas {
+        grid-template-columns: repeat(1, 1fr); /* 2 cartillas por fila en pantallas muy pequeñas */
+    }
+}
